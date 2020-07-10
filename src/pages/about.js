@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
+import Layout from '../components/Layout';
 
 const about = () => {
   return (
-    <Fragment>
+    <Layout>
       <h1>About me</h1>
       <p>This is my personal website</p>
       <Link to="/">&larr; Back to Home</Link>
-    </Fragment>
+    </Layout>
   );
 };
 

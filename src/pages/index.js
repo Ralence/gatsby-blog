@@ -1,10 +1,11 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
+import Layout from '../components/Layout';
 
 export default () => (
-  <Fragment>
+  <Layout>
     <h1>Home</h1>
     <p>Hello Frontend Masters!</p>
     <Link to="/about">About</Link>
-  </Fragment>
+  </Layout>
 );
