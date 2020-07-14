@@ -1,21 +1,34 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { css } from '@emotion/core';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Layout from '../components/Layout';
 import ReadLink from '../components/ReadLink';
 
-const post = () => {
+export const query = graphql`
+  query($slug: String!) {
+    mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        author
+      }
+      body
+    }
+  }
+`;
+
+const post = ({ data: { mdx: post } }) => {
   return (
     <Layout>
-      <h1>Post title</h1>
+      <h1>{post.frontmatter.title}</h1>
       <p
         css={css`
           font-size: 0.75rem;
         `}
       >
-        Posted by (author)
+        Posted by {post.frontmatter.author}
       </p>
-      <p>post body here</p>
+      <MDXRenderer>{post.body}</MDXRenderer>
       <ReadLink to="/">&larr; Back to all posts</ReadLink>
     </Layout>
   );
