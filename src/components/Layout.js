@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
             margin: 0;
           }
 
-          * + * {
+          + * {
             margin-top: 1rem;
           }
 

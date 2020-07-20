@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import PostPreview from '../components/PostPreview';
 import usePosts from '../hooks/use-posts';

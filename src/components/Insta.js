@@ -6,7 +6,6 @@ import useInstagram from '../hooks/use-instagram';
 
 const Insta = () => {
   const instaPhotos = useInstagram();
-  const { username } = instaPhotos[0];
   return (
     <Fragment>
       <h2>Instagram posts from @Vicky</h2>
@@ -23,6 +22,7 @@ const Insta = () => {
             key={photo.id}
             href={`https://instagram.com/p/${photo.id}/`}
             target="_blank"
+            rel="noopener noreferrer"
             css={css`
               box-shadow: 0;
               display: block;
